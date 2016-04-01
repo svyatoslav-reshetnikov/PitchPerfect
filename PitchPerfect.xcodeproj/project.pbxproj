@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1D36AFD1CAE596400293327 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D36AFC1CAE596400293327 /* PlaySoundsViewController.swift */; };
+		E1D36AFF1CAE6BCE00293327 /* PlaySoundsViewController+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D36AFE1CAE6BCE00293327 /* PlaySoundsViewController+Audio.swift */; };
 		E1DB5E221CAD5920004FACD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB5E211CAD5920004FACD9 /* AppDelegate.swift */; };
 		E1DB5E241CAD5920004FACD9 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DB5E231CAD5920004FACD9 /* RecordSoundsViewController.swift */; };
 		E1DB5E271CAD5920004FACD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DB5E251CAD5920004FACD9 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E1D36AFC1CAE596400293327 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		E1D36AFE1CAE6BCE00293327 /* PlaySoundsViewController+Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaySoundsViewController+Audio.swift"; sourceTree = "<group>"; };
 		E1DB5E1E1CAD591F004FACD9 /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DB5E211CAD5920004FACD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1DB5E231CAD5920004FACD9 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				E1DB5E211CAD5920004FACD9 /* AppDelegate.swift */,
 				E1DB5E231CAD5920004FACD9 /* RecordSoundsViewController.swift */,
+				E1D36AFC1CAE596400293327 /* PlaySoundsViewController.swift */,
+				E1D36AFE1CAE6BCE00293327 /* PlaySoundsViewController+Audio.swift */,
 				E1DB5E251CAD5920004FACD9 /* Main.storyboard */,
 				E1DB5E281CAD5920004FACD9 /* Assets.xcassets */,
 				E1DB5E2A1CAD5920004FACD9 /* LaunchScreen.storyboard */,
@@ -136,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1DB5E241CAD5920004FACD9 /* RecordSoundsViewController.swift in Sources */,
+				E1D36AFF1CAE6BCE00293327 /* PlaySoundsViewController+Audio.swift in Sources */,
+				E1D36AFD1CAE596400293327 /* PlaySoundsViewController.swift in Sources */,
 				E1DB5E221CAD5920004FACD9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,7 +207,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -239,7 +247,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -252,6 +260,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PitchPerfect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hit2b.PitchPerfect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -263,6 +272,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PitchPerfect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hit2b.PitchPerfect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -288,6 +298,7 @@
 				E1DB5E321CAD5920004FACD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
