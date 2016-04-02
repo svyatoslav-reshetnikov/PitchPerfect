@@ -61,7 +61,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
-        print("Called")
         if flag {
             // In udacity video used audioRecorder.url as sender
             // I think this is a bad idea to use global vars if may to use local var
