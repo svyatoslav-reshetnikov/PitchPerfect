@@ -25,7 +25,6 @@ class PlaySoundsViewController: UIViewController {
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTimer: NSTimer!
     
-    //enun ButtonType: Int { case Slow = 0, Fast }
     enum ButtonType: Int { case Slow = 0, Fast, Chipmunk, Vader, Echo, Reverb }
     
     override func viewDidLoad() {

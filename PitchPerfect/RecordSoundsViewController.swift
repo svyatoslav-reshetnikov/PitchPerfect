@@ -16,15 +16,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var stopRecordingButton: UIButton!
     
     var audioRecorder: AVAudioRecorder!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     @IBAction func startRecording(sender: AnyObject) {
         recordingLabel.text = "Recording in progress"
@@ -62,18 +53,20 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
-            // In udacity video used audioRecorder.url as sender
-            // I think this is a bad idea to use global vars if may to use local var
-            // Here i use "recorder" var from signature of this function and it work perfect
+            /* 
+             In udacity video used audioRecorder.url as sender
+             I think this is a bad idea to use global vars if may to use local var
+             Here i use "recorder" var from signature of this function and it work perfect
+             */
             self.performSegueWithIdentifier("stopRecording", sender: recorder.url)
         } else {
-            print("Saving of recording failed")
+            let alert = UIAlertController(title: "Error", message: "Saving of recording failed", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Try again", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print(segue.identifier)
-        print(sender)
         if (segue.identifier == "stopRecording") {
             let playSoundsVC = segue.destinationViewController as! PlaySoundsViewController
             let recordedAudioURL = sender as! NSURL
