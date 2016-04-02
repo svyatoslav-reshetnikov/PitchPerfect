@@ -47,7 +47,7 @@ class PlaySoundsViewController: UIViewController {
         case .Slow:
             playSound(rate: 0.5)
         case .Fast:
-            playSound(rate: 0.5)
+            playSound(rate: 1.5)
         case .Chipmunk:
             playSound(pitch: 1000)
         case .Vader:

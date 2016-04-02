@@ -31,8 +31,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         stopRecordingButton.enabled = true
         recordButton.enabled = false
         
-        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] 
-        
+        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
@@ -51,6 +50,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordingLabel.text = "Tap to record"
         recordButton.enabled = true
         stopRecordingButton.enabled = false
+        
+        audioRecorder.stop()
+        let audioSession = AVAudioSession.sharedInstance()
+        try! audioSession.setActive(false)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -58,10 +61,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
+        print("Called")
         if flag {
-            // In example use global variable audioRecorder
-            // self.performSegueWithIdentifier("stopRecording", sender: audioRecorder.url)
-            // I think best way to use parameter recorder in function's head because functions must be less depend from global variables
+            // In udacity video used audioRecorder.url as sender
+            // I think this is a bad idea to use global vars if may to use local var
+            // Here i use "recorder" var from signature of this function and it work perfect
             self.performSegueWithIdentifier("stopRecording", sender: recorder.url)
         } else {
             print("Saving of recording failed")
@@ -69,6 +73,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(segue.identifier)
+        print(sender)
         if (segue.identifier == "stopRecording") {
             let playSoundsVC = segue.destinationViewController as! PlaySoundsViewController
             let recordedAudioURL = sender as! NSURL
@@ -76,4 +82,3 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
 }
-
