@@ -1,3 +1,5 @@
-#PitchPerfect
+# PitchPerfect
+iOS App #1 from the Udacity Nanodegree program. This app allows to record your voice and add effect over record.
 
-This is PitchPerfect app from Udacity Nanodegree Program for iOS Developers.
+How to use
+Clone project into your machine and open project via XCode.
